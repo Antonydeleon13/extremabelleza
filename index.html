@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrema Belleza | Academia de Alta Peluquería y Estética</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text-dark: #111111;
+            --color-text-muted: #555555;
+            --color-accent: #f3a3b4; 
+            --font-editorial: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--color-bg); color: var(--color-text-dark); font-family: var(--font-sans); line-height: 1.6; overflow-x: hidden; text-align: center; }
+
+        /* --- Header / Logo --- */
+        header { padding: 3rem 1rem; background-color: var(--color-bg); }
+        .logo-container img { max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto; }
+
+        .nav-menu { list-style: none; display: flex; justify-content: center; gap: 2.5rem; margin-top: 2rem; }
+        .nav-menu a { text-decoration: none; color: var(--color-text-dark); font-weight: 400; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s ease; }
+        .nav-menu a:hover, .nav-menu .active { color: var(--color-accent); }
+
+        /* --- Banner --- */
+        .banner-section { width: 100%; display: flex; justify-content: center; }
+        .banner-img { max-width: 100%; height: auto; display: block; }
+
+        /* --- Hero --- */
+        .hero { padding: 6rem 2rem; }
+        .hero-content { max-width: 850px; margin: 0 auto; }
+        .hero-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--color-text-muted); margin-bottom: 1rem; display: inline-block; }
+        .hero-title { font-family: var(--font-editorial); font-size: 3.2rem; font-weight: 400; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 2rem; }
+        .hero-title span { font-style: italic; color: var(--color-accent); }
+        .hero-description { font-size: 1.05rem; color: var(--color-text-muted); max-width: 650px; margin: 0 auto 3rem auto; font-weight: 300; }
+        
+        .cta-button { display: inline-block; background-color: var(--color-text-dark); color: var(--color-bg); text-decoration: none; padding: 1.1rem 3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; border: 1px solid var(--color-text-dark); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .cta-button:hover { background-color: transparent; color: var(--color-text-dark); }
+
+        /* --- Aval --- */
+        .aval-section { padding: 6rem 2rem; background-color: #fafafa; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea; }
+        .aval-badge { display: inline-block; border: 1px solid var(--color-text-dark); padding: 0.5rem 1.5rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .aval-text { font-family: var(--font-editorial); font-size: 1.8rem; color: var(--color-text-dark); line-height: 1.4; max-width: 700px; margin: 0 auto; font-weight: 400; }
+
+        /* --- Carreras --- */
+        .carreras-section { padding: 9rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .section-header { margin-bottom: 6rem; }
+        .section-subtitle { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 5px; color: var(--color-text-muted); margin-bottom: 1rem; }
+        .section-title { font-family: var(--font-editorial); font-size: 2.8rem; font-weight: 400; }
+        
+        .grid-carreras { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem 5rem; text-align: left; }
+        .carrera-card { border-bottom: 1px solid #eaeaea; padding-bottom: 2.5rem; transition: all 0.4s ease; }
+        .carrera-card:hover { border-bottom-color: var(--color-accent); transform: translateY(-2px); }
+        .carrera-number { font-family: var(--font-editorial); font-size: 1.1rem; font-style: italic; color: var(--color-accent); margin-bottom: 0.8rem; }
+        .carrera-name { font-family: var(--font-editorial); font-size: 2rem; font-weight: 400; margin-bottom: 0.8rem; letter-spacing: -0.5px; }
+        .carrera-details { font-size: 0.85rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 1.5px; }
+
+        /* --- Footer --- */
+        footer { border-top: 1px solid #f0f0f0; padding: 5rem 2rem; background-color: var(--color-bg); }
+        .footer-logo { max-width: 160px; margin: 0 auto 2rem auto; display: block; }
+        .footer-text { font-size: 0.8rem; color: var(--color-text-muted); letter-spacing: 1px; line-height: 1.8; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .grid-carreras { grid-template-columns: 1fr; gap: 3rem; }
+            .section-title { font-size: 2rem; }
+            .aval-text { font-size: 1.4rem; }
+            .logo-container img { max-width: 220px; }
+            .nav-menu { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Extrema Belleza Logo">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="actividades.html">Actividades</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner-section">
+        <img src="baner.jpg" alt="Banner Extrema Belleza" class="banner-img">
+    </section>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Alta Escuela de Estilismo</span>
+            <h1 class="hero-title">Desarrolla nuevas habilidades y destaca en el mercado de la <span>belleza profesional</span></h1>
+            <p class="hero-description">
+                Prepárate con técnicas de vanguardia y destaca en un mercado global cada vez más competitivo. Tu futuro comienza aquí.
+            </p>
+            <a href="contacto.html" class="cta-button">Inscríbete Ahora</a>
+        </div>
+    </section>
+
+    <section class="aval-section">
+        <div class="aval-container">
+            <div class="aval-badge">Certificación Oficial</div>
+            <h2 class="aval-text">
+                "Te ofrecemos carreras especializadas todas avaladas por el Ministerio de Educación (Mineduc)."
+            </h2>
+        </div>
+    </section>
+
+    <section class="carreras-section">
+        <div class="section-header">
+            <span class="section-subtitle">Nuestra Oferta Académica</span>
+            <h2 class="section-title">Carreras de Especialización</h2>
+        </div>
+
+        <div class="grid-carreras">
+            <div class="carrera-card">
+                <div class="carrera-number">01</div>
+                <h3 class="carrera-name">Cultura de Belleza</h3>
+                <p class="carrera-details">Duración Especializada</p>
+            </div>
+            <div class="carrera-card">
+                <div class="carrera-number">02</div>
+                <h3 class="carrera-name">Maquillaje y Alto Peinado</h3>
+                <p class="carrera-details">Técnicas de Pasarela</p>
+            </div>
+            <div class="carrera-card">
+                <div class="carrera-number">03</div>
+                <h3 class="carrera-name">Manicurista Profesional</h3>
+                <p class="carrera-details">Estética de Uñas Avanzada</p>
+            </div>
+            <div class="carrera-card">
+                <div class="carrera-number">04</div>
+                <h3 class="carrera-name">Barbería Profesional</h3>
+                <p class="carrera-details">Cortes Clásicos y Vanguardia</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="logo.png" alt="Extrema Belleza Logo" class="footer-logo">
+        <p class="footer-text">© 2026 Extrema Belleza. Todos los derechos reservados.</p>
+        <p class="footer-text" style="font-size: 0.7rem; color: #999; margin-top: 0.5rem;">Formación Profesional Avalada por el Ministerio de Educación (Mineduc)</p>
+    </footer>
+
+</body>
+</html>

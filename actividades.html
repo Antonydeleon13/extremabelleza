@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades Editoriales | Extrema Barber Academy Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text-dark: #111111;
+            --color-text-muted: #555555;
+            --color-accent: #d4af37; /* Oro sutil y masculino */
+            --font-editorial: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* TEXTURA REFINADA: Micro-cuadrícula de alta costura, sumamente sutil en fondo blanco */
+        body { 
+            background-color: var(--color-bg); 
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+            background-size: 10px 10px;
+            color: var(--color-text-dark); 
+            font-family: var(--font-sans); 
+            line-height: 1.6; 
+            text-align: center; 
+        }
+
+        /* --- Header de Esquina a Esquina --- */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 2.5rem 4rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-container img { 
+            max-width: 135px; 
+            width: 100%; 
+            display: block; 
+        }
+        .nav-menu { 
+            list-style: none; 
+            display: flex; 
+            gap: 2.5rem; 
+        }
+        .nav-menu a { 
+            text-decoration: none; 
+            color: var(--color-text-dark); 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-weight: 600; 
+            transition: color 0.3s ease;
+        }
+        .nav-menu a:hover, .nav-menu .active { color: var(--color-accent); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+        
+        .page-header { margin-bottom: 4rem; }
+        .page-title { font-family: var(--font-sans); font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; }
+        .page-title span { font-family: var(--font-editorial); font-style: italic; font-weight: 400; color: var(--color-accent); text-transform: none; letter-spacing: 0; }
+        .page-subtitle { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 5px; color: var(--color-text-muted); margin-bottom: 0.5rem; font-weight: 600; }
+
+        /* --- Evento Destacado: Limpio y con Sombra Suave de Capas --- */
+        .featured-event {
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+            padding: 5rem 3rem;
+            text-align: center;
+            margin-bottom: 7rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+        }
+        .event-badge { display: inline-block; background-color: var(--color-text-dark); color: #fff; padding: 0.5rem 1.4rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 2rem; font-weight: 600; }
+        .event-meta { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-text-dark); margin-bottom: 4rem; font-weight: 600; }
+        
+        /* --- Contador PRO Fino --- */
+        .countdown-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 1.5rem; 
+            margin-bottom: 5rem; 
+        }
+        .countdown-item { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-width: 90px;
+        }
+        .countdown-number { 
+            font-family: var(--font-sans); 
+            font-size: 3.8rem; 
+            font-weight: 800; 
+            color: var(--color-text-dark); 
+            line-height: 1; 
+            background: #ffffff;
+            padding: 0.8rem;
+            border-radius: 12px;
+            width: 100%;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #f3f3f3;
+        }
+        .countdown-label { 
+            font-size: 0.65rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--color-text-muted); 
+            margin-top: 0.8rem; 
+            font-weight: 600;
+        }
+        .countdown-separator {
+            font-family: var(--font-sans);
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            font-weight: 800;
+            line-height: 1;
+            margin-top: -1.8rem;
+        }
+
+        /* --- Sección Expositores --- */
+        .expositores-section { margin-top: 4rem; text-align: left; width: 100%; }
+        .expositores-title { font-family: var(--font-sans); font-size: 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 3rem; text-align: center; border-bottom: 1px solid #eaeaea; padding-bottom: 1rem; color: var(--color-text-dark); }
+        
+        .grid-expositores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 1rem 0; }
+        
+        /* Tarjeta Estilo Selección (Sin bordes, flotado suave) */
+        .expositor-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 0 0 1.5rem 0;
+            text-align: center;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .expositor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .expositor-photo-wrapper {
+            width: 100%;
+            height: 250px; 
+            background: transparent; 
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: visible;
+        }
+
+        .expositor-main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: top center; 
+            border-radius: 16px 16px 0 0;
+        }
+
+        .expositor-avatar-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        .expositor-avatar-badge img { width: 100%; height: 100%; object-fit: cover; }
+
+        .expositor-info {
+            margin-top: 2.5rem;
+            padding: 0 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .expositor-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            margin-bottom: 0.1rem;
+            width: 100%;
+        }
+        
+        .expositor-name { 
+            font-family: var(--font-sans);
+            font-size: 1.15rem; 
+            font-weight: 800; 
+            color: #111111;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .badge-verificado { width: 14px; height: 14px; object-fit: contain; flex-shrink: 0; }
+
+        .expositor-instagram {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .expositor-origin-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: 0.1rem;
+        }
+        .expositor-flag { width: 16px; height: auto; border: 1px solid #e0e0e0; }
+        .expositor-origin { font-size: 0.75rem; color: #888888; margin: 0; }
+
+        /* --- Categorías de Competición (Estilo Flotado y Limpio) --- */
+        .categorias-section { margin-top: 6rem; text-align: left; }
+        .grid-categorias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 2.5rem; }
+        
+        .categoria-card { 
+            background-color: #ffffff; 
+            text-align: left; 
+            display: flex; 
+            flex-direction: column; 
+            border-radius: 16px;
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .categoria-card:hover { 
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .cat-img-wrapper { width: 100%; height: 250px; overflow: hidden; position: relative; background-color: #fcfcfc; }
+        .cat-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.6s ease; }
+        .categoria-card:hover .cat-img-wrapper img { transform: scale(1.03); }
+
+        .cat-info-wrapper { padding: 2rem 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .cat-card-title { font-family: var(--font-sans); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: -0.5px; }
+        .cat-card-desc { font-size: 0.88rem; color: var(--color-text-muted); font-weight: 400; margin-bottom: 1.5rem; line-height: 1.6; flex-grow: 1; }
+        
+        .cat-card-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .tag-badge { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; border: 1px solid #111111; color: var(--color-text-dark); }
+        .tag-badge.accent { background-color: var(--color-text-dark); color: #ffffff; }
+
+        /* --- SECCIÓN NUEVA: Patrocinadores Oficiales (Estilo Minimalista) --- */
+        .patrocinadores-section { 
+        margin-top: 6rem; 
+        text-align: left; 
+        width: 100%; 
+    }
+    .patrocinadores-title { 
+        font-family: var(--font-sans); 
+        font-size: 2rem; 
+        font-weight: 800; 
+        text-transform: uppercase; 
+        letter-spacing: -1px; 
+        margin-bottom: 3.5rem; 
+        text-align: center; 
+        border-bottom: 1px solid #eaeaea; 
+        padding-bottom: 1rem; 
+        color: var(--color-text-dark); 
+    }
+    .grid-patrocinadores { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 0rem; /* Espaciado premium entre marcas */
+        flex-wrap: wrap; 
+        padding: 2rem 0; 
+    }
+    .patrocinador-logo { 
+        height: 310px; /* Altura imponente para que luzcan con fuerza */
+        width: auto; 
+        object-fit: contain; 
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.06)); /* Sutil relieve visual */
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease; 
+    }
+    .patrocinador-logo:hover { 
+        transform: scale(1.08); /* Efecto hover elegante */
+        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
+    }
+
+    @media (max-width: 768px) {
+        .grid-patrocinadores { 
+            gap: 4rem; 
+        }
+        .patrocinador-logo { 
+            height: 80px; /* Tamaño responsivo para dispositivos móviles */
+        }
+    }
+
+        /* --- Footer --- */
+        footer { border-top: 1px solid #f0f0f0; padding: 5rem 2rem; margin-top: 8rem; background: #ffffff; }
+        .footer-logo { max-width: 120px; margin: 0 auto 2rem auto; display: block; }
+        .footer-text { font-size: 0.75rem; color: var(--color-text-dark); letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+
+        /* --- Responsive Layout --- */
+        @media (max-width: 1024px) {
+            header { padding: 2rem; }
+            .grid-expositores { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .grid-categorias { grid-template-columns: repeat(2, 1fr); }
+            .grid-patrocinadores { gap: 3.5rem; }
+        }
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1.5rem; padding: 2rem 1rem; }
+            .grid-expositores, .grid-categorias { grid-template-columns: 1fr; }
+            .page-title { font-size: 2.3rem; }
+            .countdown-container { gap: 0.6rem; flex-wrap: wrap; }
+            .countdown-item { min-width: 75px; }
+            .countdown-number { font-size: 2.5rem; padding: 0.6rem; }
+            .countdown-separator { display: none; }
+            .grid-patrocinadores { flex-direction: column; gap: 3rem; }
+            .patrocinador-logo { max-height: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="extremabarberlogo.png" alt="Extrema Barber Academy Pro Logo">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="actividades.html" class="active">Actividades</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <span class="page-subtitle">Próximos Eventos de Élite</span>
+            <h1 class="page-title">Crónica y <span>Pasarelas</span></h1>
+        </div>
+
+        <!-- EVENTO DESTACADO SIN BORDES, EFECTO LAYER IMPECABLE -->
+        <section class="featured-event">
+            <span class="event-badge">Próximamente</span>
+            
+            <div style="margin: 0 auto 2rem auto; max-width: 420px; width: 100%;">
+                <img src="expologo.png" alt="Expo Barber Fest Xela" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+            </div>
+
+            <p class="event-meta">15 y 16 de Agosto, 2026 • Quetzaltenango, Guatemala</p>
+            
+            <!-- Marcadores del Contador PRO -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: EXPOSITORES CONFIRMADOS -->
+            <div class="expositores-section">
+                <h3 class="expositores-title">Expositores Confirmados</h3>
+                
+                <div class="grid-expositores">
+                    <!-- Expositor 1: Sebas Saquic -->
+                    <div class="expositor-card">
+                        <div class="expositor-photo-wrapper">
+                            <img src="artistas/skop.png" alt="Sebas Saquic" class="expositor-main-img">
+                            <div class="expositor-avatar-badge">
+                                <img src="artistas/skop.png" alt="Sebas Saquic">
+                            </div>
+                        </div>
+                        <div class="expositor-info">
+                            <div class="expositor-header">
+                                <h4 class="expositor-name">Sebas Saquic</h4>
+                                <img src="verificado.png" alt="Verificado" class="badge-verificado">
+                            </div>
+                            <a href="https://instagram.com/skop_style" target="_blank" class="expositor-instagram">@skop_style</a>
+                            <div class="expositor-origin-box">
+                                <svg class="expositor-flag" viewBox="0 0 9 6">
+                                    <rect width="3" height="6" fill="#4997d0"/>
+                                    <rect x="3" width="3" height="6" fill="#fff"/>
+                                    <rect x="6" width="3" height="6" fill="#4997d0"/>
+                                    <circle cx="4.5" cy="3" r="0.5" fill="#ffd700"/>
+                                </svg>
+                                <p class="expositor-origin">Guatemala</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expositor 2: Santi Quartero -->
+                    <div class="expositor-card">
+                        <div class="expositor-photo-wrapper">
+                            <img src="artistas/santi.png" alt="Santi Quartero" class="expositor-main-img">
+                            <div class="expositor-avatar-badge">
+                                <img src="artistas/santi.png" alt="Santi Quartero">
+                            </div>
+                        </div>
+                        <div class="expositor-info">
+                            <div class="expositor-header">
+                                <h4 class="expositor-name">Santi Quartero</h4>
+                                <img src="verificado.png" alt="Verificado" class="badge-verificado">
+                            </div>
+                            <a href="https://instagram.com/santiquartero" target="_blank" class="expositor-instagram">@santiquartero</a>
+                            <div class="expositor-origin-box">
+                                <svg class="expositor-flag" viewBox="0 0 9 6">
+                                    <rect width="9" height="2" fill="#74acdf"/>
+                                    <rect y="2" width="9" height="2" fill="#fff"/>
+                                    <rect y="4" width="9" height="2" fill="#74acdf"/>
+                                    <circle cx="4.5" cy="3" r="0.4" fill="#f6b426"/>
+                                </svg>
+                                <p class="expositor-origin">Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expositor 3: Daniela Islas -->
+                    <div class="expositor-card">
+                        <div class="expositor-photo-wrapper">
+                            <img src="artistas/daniela.png" alt="Daniela Islas" class="expositor-main-img">
+                            <div class="expositor-avatar-badge">
+                                <img src="artistas/daniela.png" alt="Daniela Islas">
+                            </div>
+                        </div>
+                        <div class="expositor-info">
+                            <div class="expositor-header">
+                                <h4 class="expositor-name">Daniela Islas</h4>
+                                <img src="verificado.png" alt="Verificado" class="badge-verificado">
+                            </div>
+                            <a href="https://instagram.com/islascuts" target="_blank" class="expositor-instagram">@islascuts</a>
+                            <div class="expositor-origin-box">
+                                <svg class="expositor-flag" viewBox="0 0 7 4">
+                                    <rect width="2.33" height="4" fill="#006847"/>
+                                    <rect x="2.33" width="2.34" height="4" fill="#fff"/>
+                                    <rect x="4.67" width="2.33" height="4" fill="#CE1126"/>
+                                    <circle cx="3.5" cy="2" r="0.3" fill="#8B5A2B"/>
+                                </svg>
+                                <p class="expositor-origin">México</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expositor 4: Jonathan Medina -->
+                    <div class="expositor-card">
+                        <div class="expositor-photo-wrapper">
+                            <img src="artistas/jonathan.png" alt="Jonathan Medina" class="expositor-main-img">
+                            <div class="expositor-avatar-badge">
+                                <img src="artistas/jonathan.png" alt="Jonathan Medina">
+                            </div>
+                        </div>
+                        <div class="expositor-info">
+                            <div class="expositor-header">
+                                <h4 class="expositor-name">Jonathan Medina</h4>
+                                <img src="verificado.png" alt="Verificado" class="badge-verificado">
+                            </div>
+                            <a href="https://instagram.com/onfirecuts5" target="_blank" class="expositor-instagram">@onfirecuts5</a>
+                            <div class="expositor-origin-box">
+                                <svg class="expositor-flag" viewBox="0 0 7 4">
+                                    <rect width="2.33" height="4" fill="#006847"/>
+                                    <rect x="2.33" width="2.34" height="4" fill="#fff"/>
+                                    <rect x="4.67" width="2.33" height="4" fill="#CE1126"/>
+                                    <circle cx="3.5" cy="2" r="0.3" fill="#8B5A2B"/>
+                                </svg>
+                                <p class="expositor-origin">México</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: CATEGORÍAS A COMPETIR -->
+            <div class="categorias-section">
+                <h3 class="expositores-title">Categorías a Competir</h3>
+                
+                <div class="grid-categorias">
+                    <!-- Tarjeta 1: Fast Fade -->
+                    <div class="categoria-card">
+                        <div class="cat-img-wrapper">
+                            <img src="ff.png" alt="Fast Fade">
+                        </div>
+                        <div class="cat-info-wrapper">
+                            <h4 class="cat-card-title">Fast Fade</h4>
+                            <p class="cat-card-desc">Demuestra tu velocidad y precisión milimétrica bajo la presión del reloj. Técnica impecable al límite del tiempo.</p>
+                            <div class="cat-card-tags">
+                                <span class="tag-badge accent">Batalla en Vivo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Freestyle -->
+                    <div class="categoria-card">
+                        <div class="cat-img-wrapper">
+                            <img src="fs.png" alt="Freestyle">
+                        </div>
+                        <div class="cat-info-wrapper">
+                            <h4 class="cat-card-title">Freestyle</h4>
+                            <p class="cat-card-desc">Creatividad urbana sin límites. Se evalúa minuciosamente el nivel de complejidad, simetría y vanguardia de tu Hair Tattoo.</p>
+                            <div class="cat-card-tags">
+                                <span class="tag-badge accent">Batalla en Vivo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Mid Taper -->
+                    <div class="categoria-card">
+                        <div class="cat-img-wrapper">
+                            <img src="mt.png" alt="Mid Taper">
+                        </div>
+                        <div class="cat-info-wrapper">
+                            <h4 class="cat-card-title">Mid Taper</h4>
+                            <p class="cat-card-desc">La perfecta combinación entre lo clásico y lo contemporáneo. Sombras limpias y difuminación precisa.</p>
+                            <div class="cat-card-tags">
+                                <span class="tag-badge accent">Batalla en Vivo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: PATROCINADORES OFICIALES -->
+      <div class="patrocinadores-section">
+    <h3 class="patrocinadores-title">Patrocinadores Oficiales</h3>
+    <div class="grid-patrocinadores">
+        <img src="patrocinadores/red.png" alt="Red Sponsor" class="patrocinador-logo">
+        <img src="patrocinadores/finos.png" alt="Finos Sponsor" class="patrocinador-logo">
+        <img src="patrocinadores/kolor.png" alt="Kolor Sponsor" class="patrocinador-logo">
+        <img src="patrocinadores/kbron.png" alt="Kbron Sponsor" class="patrocinador-logo">
+    </div>
+</div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="extremabarberlogo.png" alt="Extrema Barber Academy Pro Logo" class="footer-logo">
+        <p class="footer-text">© 2026 Extrema Barber Academy Pro. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DEL CONTADOR EN VIVO -->
+    <script>
+        const countdownDate = new Date("Aug 15, 2026 09:00:00").getTime();
+
+        const updateCountdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                document.querySelector(".countdown-container").innerHTML = "<p style='font-family: var(--font-sans); font-size: 2rem; font-weight: 800; color: var(--color-accent);'>¡El evento ha comenzado!</p>";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
