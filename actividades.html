@@ -356,24 +356,41 @@
         }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1.2rem; padding: 1.5rem 1rem; }
-            .nav-menu { gap: 1.5rem; width: 100%; justify-content: center; }
+            /* Nav móvil limpio en una sola línea horizontal */
+            header { padding: 1.2rem 1rem; }
+            .header-container { flex-direction: column; gap: 1.2rem; padding: 0; }
+            .logo-container img { max-height: 75px; }
+            .nav-menu { gap: 1.8rem; width: 100%; justify-content: center; padding-bottom: 0.2rem; }
+            .nav-menu a { font-size: 0.8rem; letter-spacing: 1.5px; }
             
-            /* Ajustes del contenedor principal y títulos */
             .featured-event { padding: 4rem 1rem; }
             .page-header { margin-bottom: 2.5rem; }
             .event-meta { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 3rem; }
 
-            /* Grid en 2 columnas para Expositores y Categorías en móvil */
-            .grid-expositores { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-            .expositor-photo-wrapper { height: 160px; }
-            .expositor-avatar-badge { width: 44px; height: 44px; bottom: -22px; }
-            .expositor-info { margin-top: 1.8rem; padding: 0 0.5rem; }
-            .expositor-name { font-size: 0.9rem; }
-            .expositor-instagram { font-size: 0.65rem; }
-            .expositor-origin-box { padding: 0.1rem 0.5rem; gap: 0.3rem; }
-            .expositor-origin { font-size: 0.65rem; }
+            /* --- MÓVIL: MODO CARRETE (HORIZONTAL SCROLL) PARA EXPOSITORES --- */
+            .expositores-section { padding-left: 0.5rem; padding-right: 0.5rem; }
+            .grid-expositores {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1.2rem;
+                padding: 1rem 0.5rem 3rem 0.5rem;
+                scrollbar-width: none; /* Oculta barra en Firefox */
+                -webkit-overflow-scrolling: touch;
+            }
+            .grid-expositores::-webkit-scrollbar {
+                display: none; /* Oculta barra en Chrome/Safari */
+            }
+            .expositor-card {
+                flex: 0 0 240px; /* Ancho fijo perfecto para el carrete móvil */
+                scroll-snap-align: center;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            }
+            .expositor-photo-wrapper { height: 230px; }
+            .expositor-avatar-badge { width: 50px; height: 50px; bottom: -25px; }
+            .expositor-info { margin-top: 2rem; }
 
+            /* Grid en 2 columnas para categorías */
             .grid-categorias { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .cat-img-wrapper { height: 140px; }
             .cat-info-wrapper { padding: 1.2rem 1rem; }
@@ -381,14 +398,14 @@
             .cat-card-desc { font-size: 0.75rem; line-height: 1.5; margin-bottom: 1rem; }
             .tag-badge { font-size: 0.55rem; padding: 0.3rem 0.6rem; }
 
-            /* Contador estilizado adaptado a pantallas táctiles */
+            /* Contador estilizado */
             .countdown-container { gap: 0.5rem; flex-wrap: wrap; margin-bottom: 4rem; }
             .countdown-item { min-width: 70px; }
             .countdown-number { font-size: 2.2rem; padding: 0.6rem 0.4rem; border-radius: 6px; }
             .countdown-label { font-size: 0.6rem; margin-top: 0.5rem; letter-spacing: 1px; }
             .countdown-separator { display: none; }
 
-            /* Patrocinadores en 2 columnas muy limpias */
+            /* Patrocinadores en grid móvil */
             .patrocinadores-title { font-size: 1.6rem; margin-bottom: 2.5rem; }
             .grid-patrocinadores { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.5rem; justify-items: center; }
             .patrocinador-logo { height: 75px; }
@@ -399,8 +416,6 @@
 
         /* Ajuste fino para pantallas pequeñas */
         @media (max-width: 480px) {
-            .grid-expositores { grid-template-columns: 1fr; gap: 2rem; max-width: 280px; margin: 0 auto; }
-            .expositor-photo-wrapper { height: 240px; }
             .grid-categorias { grid-template-columns: 1fr; gap: 1.5rem; }
             .cat-img-wrapper { height: 180px; }
         }
