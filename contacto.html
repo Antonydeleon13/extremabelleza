@@ -6,7 +6,7 @@
     <title>Contacto | Extrema Belleza</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CDN de Iconos de Bootstrap Oficial -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -25,25 +25,24 @@
         
         body { 
             background-color: var(--color-bg); 
-            background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('textura.jpg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), url('textura.jpg');
             background-repeat: repeat;
             background-position: center top;
             color: var(--color-text-dark); 
             font-family: var(--font-sans); 
             line-height: 1.6; 
             overflow-x: hidden; 
-            text-align: center; 
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Header --- */
+        /* --- Header Premium --- */
         header { 
-            padding: 3rem 2rem; 
+            padding: 2.5rem 2rem; 
             background-color: transparent; 
         }
         
         .logo-container img { 
-            max-height: 100px; 
+            max-height: 90px; 
             width: auto; 
             display: block; 
             margin: 0 auto; 
@@ -53,8 +52,8 @@
             list-style: none; 
             display: flex; 
             justify-content: center; 
-            gap: 3rem; 
-            margin-top: 2.5rem; 
+            gap: 2.5rem; 
+            margin-top: 2rem; 
         }
         
         .nav-menu a { 
@@ -71,11 +70,9 @@
             color: var(--color-accent); 
         }
 
-        /* --- Encabezado de Página Editorial --- */
+        /* --- Encabezado Estilo Pasarela --- */
         .page-heading-section {
-            padding: 6rem 2rem 2rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 5rem 1.5rem 3rem 1.5rem;
             text-align: center;
         }
         
@@ -84,21 +81,20 @@
             background-color: rgba(243, 163, 180, 0.12);
             color: var(--color-text-dark);
             padding: 0.4rem 1.4rem;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 4px;
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-radius: 50px;
             border: 1px solid rgba(243, 163, 180, 0.25);
         }
         
         .page-main-title {
             font-family: var(--font-sans);
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
             letter-spacing: -1.5px;
-            margin-bottom: 1.5rem;
             color: var(--color-text-dark);
             text-transform: uppercase;
         }
@@ -112,145 +108,179 @@
             letter-spacing: 0;
         }
 
-        /* --- Bloques Informativos Abiertos --- */
-        .info-container {
-            max-width: 1000px;
+        /* --- Contenedor Unificado Modular --- */
+        .info-wrapper-premium {
+            max-width: 950px;
             margin: 0 auto;
-            padding: 2rem 2rem 8rem 2rem;
+            padding: 0 1.5rem 7rem 1.5rem;
         }
 
-        .section-divider {
-            border: none;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        /* Sección Canales de Botones de Lujo */
+        .channels-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             margin-bottom: 5rem;
-            width: 100%;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6rem;
+        .premium-btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--color-text-dark);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
             text-align: left;
         }
 
-        .info-block-title {
-            font-size: 0.8rem;
+        .premium-btn-link:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 25px rgba(243, 163, 180, 0.12);
+        }
+
+        .btn-link-left {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .btn-link-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--color-text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .premium-btn-link:hover .btn-link-icon-box {
+            background-color: var(--color-text-dark);
+            color: #ffffff;
+        }
+
+        .btn-link-text .btn-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-text-muted);
+            font-weight: 600;
+            display: block;
+        }
+
+        .btn-link-text .btn-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .btn-link-arrow {
+            font-size: 1.1rem;
+            color: rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .premium-btn-link:hover .btn-link-arrow {
+            transform: translateX(4px);
+            color: var(--color-accent);
+        }
+
+        /* Sección Sedes Tipo Fichas Editoriales */
+        .sedes-section-title {
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--color-text-dark);
             font-weight: 800;
-            margin-bottom: 2.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding-bottom: 0.6rem;
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
-        /* Estilos de las Sedes */
-        .sedes-list {
+        .sedes-chips-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem 1.5rem;
-        }
-
-        .sede-item h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--color-text-dark);
-            margin-bottom: 0.2rem;
-            letter-spacing: -0.5px;
-        }
-
-        .sede-item p {
-            font-size: 0.8rem;
-            color: var(--color-accent);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        /* Estilos de Canales Directos */
-        .direct-channels {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .channel-item {
-            display: flex;
-            align-items: flex-start;
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
+            margin-bottom: 5rem;
         }
 
-        .channel-icon {
-            font-size: 1.4rem;
-            color: var(--color-text-dark);
-            margin-top: 0.1rem;
-        }
-
-        .channel-content .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--color-text-muted);
-            font-weight: 600;
-            display: block;
-            margin-bottom: 0.1rem;
-        }
-
-        .channel-content a {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--color-text-dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .channel-content a:hover {
-            color: var(--color-accent);
-        }
-
-        /* Redes Sociales con Iconos Premium */
-        .social-links-wrapper {
-            margin-top: 1rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .social-links-wrapper .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--color-text-muted);
-            font-weight: 600;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.2rem;
-        }
-
-        .social-icon-btn {
+        .sede-chip-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.2rem 1rem;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 44px;
-            height: 44px;
+            gap: 0.6rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+        }
+
+        .sede-chip-card i {
+            color: var(--color-accent);
+            font-size: 1rem;
+        }
+
+        .sede-chip-card span {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-text-dark);
+        }
+
+        /* Redes Sociales Centradas */
+        .social-container-center {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .social-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--color-text-muted);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .social-flex-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-circle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background-color: transparent;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
             color: var(--color-text-dark);
             font-size: 1.2rem;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
         }
 
-        .social-icon-btn:hover {
+        .social-circle-btn:hover {
             color: #ffffff;
             background-color: var(--color-text-dark);
             border-color: var(--color-text-dark);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         /* --- Footer --- */
@@ -261,7 +291,7 @@
         }
         
         .footer-logo { 
-            max-width: 180px; 
+            max-width: 160px; 
             margin: 0 auto 1.5rem auto; 
             display: block; 
         }
@@ -274,123 +304,142 @@
             text-transform: uppercase; 
         }
 
-        /* Adaptabilidad */
-        @media (max-width: 868px) {
-            .info-grid { grid-template-columns: 1fr; gap: 4rem; }
-            .page-main-title { font-size: 2.2rem; }
-            .page-heading-section { padding-top: 4rem; }
+        /* --- RESPONSIVE MÓVIL BRUTAL --- */
+        @media (max-width: 768px) {
+            header { padding: 1.5rem 1rem; }
+            .header-container { flex-direction: column; gap: 1rem; }
+            .logo-container img { max-height: 75px; }
+            .nav-menu { gap: 1.8rem; margin-top: 1.2rem; }
+            
+            .page-heading-section { padding-top: 3.5rem; }
+            .page-main-title { font-size: 2.1rem; }
+
+            /* Canales optimizados para un toque cómodo */
+            .premium-btn-link { padding: 1.2rem 1.5rem; border-radius: 12px; }
+            .btn-link-icon-box { width: 40px; height: 40px; font-size: 1.1rem; }
+            .btn-link-text .btn-value { font-size: 0.95rem; }
+
+            /* Sedes en 2 columnas simétricas tipo bloque de cuadrícula limpio */
+            .sedes-chips-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 4rem; }
+            .sede-chip-card { padding: 1rem; border-radius: 10px; }
+            .sede-chip-card span { font-size: 0.8rem; }
         }
-        @media (max-width: 480px) {
-            .sedes-list { grid-template-columns: 1fr; gap: 1.8rem; }
-            .nav-menu { gap: 1.5rem; }
-            .logo-container img { max-height: 80px; }
-            .channel-content a { font-size: 1.05rem; }
+
+        @media (max-width: 380px) {
+            .sedes-chips-grid { grid-template-columns: 1fr; }
+            .btn-link-text .btn-value { font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Extrema Belleza Logo">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Extrema Belleza Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="actividades.html">Actividades</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <!-- Título Limpio de la Página -->
         <section class="page-heading-section">
             <span class="page-tag">Contacto Oficial</span>
             <h2 class="page-main-title">Únete a <span>Extrema Belleza</span></h2>
         </section>
 
-        <!-- Información Integrada Estilo Editorial -->
-        <div class="info-container">
-            <hr class="section-divider">
+        <div class="info-wrapper-premium">
             
-            <div class="info-grid">
-                <!-- Columna Izquierda: Nuestras Sedes -->
-                <div>
-                    <h3 class="info-block-title">Nuestras Academias</h3>
-                    <div class="sedes-list">
-                        <div class="sede-item">
-                            <h4>Quetzaltenango</h4>
-                            <p>Sede Central</p>
+            <!-- Canales de Comunicación Tipo Enlaces Editoriales Premium -->
+            <div class="channels-wrapper">
+                
+                <!-- Enlace WhatsApp -->
+                <a href="https://wa.me/50256137348" target="_blank" class="premium-btn-link">
+                    <div class="btn-link-left">
+                        <div class="btn-link-icon-box">
+                            <i class="bi bi-whatsapp"></i>
                         </div>
-                        <div class="sede-item">
-                            <h4>San Marcos</h4>
-                            <p>Sede Regional</p>
-                        </div>
-                        <div class="sede-item">
-                            <h4>Antigua Guatemala</h4>
-                            <p>Sede Regional</p>
-                        </div>
-                        <div class="sede-item">
-                            <h4>Tacaná</h4>
-                            <p>Sede Regional</p>
+                        <div class="btn-link-text">
+                            <span class="btn-label">Inscripciones y Admisiones</span>
+                            <span class="btn-value">+502 5613 7348</span>
                         </div>
                     </div>
+                    <i class="bi bi-arrow-right btn-link-arrow"></i>
+                </a>
+
+                <!-- Enlace Teléfono -->
+                <a href="tel:77368578" class="premium-btn-link">
+                    <div class="btn-link-left">
+                        <div class="btn-link-icon-box">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div class="btn-link-text">
+                            <span class="btn-label">Soporte Telefónico</span>
+                            <span class="btn-value">7736 8578</span>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right btn-link-arrow"></i>
+                </a>
+
+                <!-- Enlace Correo -->
+                <a href="mailto:cotidaniela502@gmail.com" class="premium-btn-link">
+                    <div class="btn-link-left">
+                        <div class="btn-link-icon-box">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="btn-link-text">
+                            <span class="btn-label">Correo Electrónico</span>
+                            <span class="btn-value">cotidaniela502@gmail.com</span>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right btn-link-arrow"></i>
+                </a>
+
+            </div>
+
+            <!-- Sección Sedes Tipo Fichas Redondeadas -->
+            <h3 class="sedes-section-title">Nuestras Academias</h3>
+            <div class="sedes-chips-grid">
+                <div class="sede-chip-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Xela</span>
                 </div>
-
-                <!-- Columna Derecha: Canales Directos y Redes -->
-                <div class="direct-channels">
-                    <div>
-                        <h3 class="info-block-title">Canales Directos</h3>
-                        <div style="display: flex; flex-direction: column; gap: 1.8rem;">
-                            
-                            <!-- Canal: WhatsApp -->
-                            <div class="channel-item">
-                                <i class="bi bi-whatsapp channel-icon"></i>
-                                <div class="channel-content">
-                                    <span class="label">Inscripciones y Admisiones</span>
-                                    <a href="https://wa.me/50256137348" target="_blank">+502 5613 7348</a>
-                                </div>
-                            </div>
-                            
-                            <!-- Canal: Teléfono PBX -->
-                            <div class="channel-item">
-                                <i class="bi bi-telephone channel-icon"></i>
-                                <div class="channel-content">
-                                    <span class="label">Soporte Telefónico</span>
-                                    <a href="tel:77368578">7736 8578</a>
-                                </div>
-                            </div>
-                            
-                            <!-- Canal: Email -->
-                            <div class="channel-item">
-                                <i class="bi bi-envelope channel-icon"></i>
-                                <div class="channel-content">
-                                    <span class="label">Correo Electrónico</span>
-                                    <a href="mailto:cotidaniela502@gmail.com">cotidaniela502@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Redes Sociales con Iconos Circulares Minimalistas -->
-                    <div class="social-links-wrapper">
-                        <span class="label">Comunidad Digital</span>
-                        <div class="social-links">
-                            <a href="https://facebook.com/mibextid=wwXlfr" target="_blank" class="social-icon-btn" title="Facebook">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="https://instagram.com/extrema_belleza_oficial" target="_blank" class="social-icon-btn" title="Instagram">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                            <a href="https://tiktok.com/@extrema_belleza_oficial" target="_blank" class="social-icon-btn" title="TikTok">
-                                <i class="bi bi-tiktok"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="sede-chip-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>San Marcos</span>
+                </div>
+                <div class="sede-chip-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Antigua</span>
+                </div>
+                <div class="sede-chip-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Tacaná</span>
                 </div>
             </div>
+
+            <!-- Comunidad Digital Centrada -->
+            <div class="social-container-center">
+                <span class="social-title">Comunidad Digital</span>
+                <div class="social-flex-icons">
+                    <a href="https://facebook.com/mibextid=wwXlfr" target="_blank" class="social-circle-btn" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/extrema_belleza_oficial" target="_blank" class="social-circle-btn" title="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@extrema_belleza_oficial" target="_blank" class="social-circle-btn" title="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
 
