@@ -6,150 +6,465 @@
     <title>Extrema Belleza | Academia de Alta Peluquería y Estética</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Mantenemos Plus Jakarta Sans y añadimos Montserrat para botones y detalles modernos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --color-bg: #ffffff;
-            --color-text-dark: #111111;
-            --color-text-muted: #555555;
-            --color-accent: #f3a3b4; 
-            --font-editorial: 'Playfair Display', Georgia, serif;
+            --color-text-dark: #1a1a1a;
+            --color-text-muted: #666666;
+            --color-accent: #e11d48; /* Un rosa-magenta más vibrante estilo Beauty Depot */
+            --color-accent-light: #fff1f2;
+            --color-border: #e5e7eb;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-alt: 'Montserrat', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--color-bg); color: var(--color-text-dark); font-family: var(--font-sans); line-height: 1.6; overflow-x: hidden; text-align: center; }
+        body { background-color: var(--color-bg); color: var(--color-text-dark); font-family: var(--font-sans); line-height: 1.6; overflow-x: hidden; }
 
-        /* --- Header / Logo --- */
-        header { padding: 3rem 1rem; background-color: var(--color-bg); }
-        .logo-container img { max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto; }
+        /* --- Cintillo Superior (Anuncio) --- */
+        .top-bar {
+            background-color: var(--color-text-dark);
+            color: #ffffff;
+            font-family: var(--font-alt);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 0.6rem 1rem;
+            font-weight: 600;
+        }
 
-        .nav-menu { list-style: none; display: flex; justify-content: center; gap: 2.5rem; margin-top: 2rem; }
-        .nav-menu a { text-decoration: none; color: var(--color-text-dark); font-weight: 400; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s ease; }
-        .nav-menu a:hover, .nav-menu .active { color: var(--color-accent); }
-
-        /* --- Banner --- */
-        .banner-section { width: 100%; display: flex; justify-content: center; }
-        .banner-img { max-width: 100%; height: auto; display: block; }
-
-        /* --- Hero --- */
-        .hero { padding: 6rem 2rem; }
-        .hero-content { max-width: 850px; margin: 0 auto; }
-        .hero-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--color-text-muted); margin-bottom: 1rem; display: inline-block; }
-        .hero-title { font-family: var(--font-editorial); font-size: 3.2rem; font-weight: 400; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 2rem; }
-        .hero-title span { font-style: italic; color: var(--color-accent); }
-        .hero-description { font-size: 1.05rem; color: var(--color-text-muted); max-width: 650px; margin: 0 auto 3rem auto; font-weight: 300; }
+        /* --- Header / Navegación Premium --- */
+        header { 
+            background-color: var(--color-bg); 
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
         
-        .cta-button { display: inline-block; background-color: var(--color-text-dark); color: var(--color-bg); text-decoration: none; padding: 1.1rem 3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; border: 1px solid var(--color-text-dark); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .cta-button:hover { background-color: transparent; color: var(--color-text-dark); }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-        /* --- Aval --- */
-        .aval-section { padding: 6rem 2rem; background-color: #fafafa; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea; }
-        .aval-badge { display: inline-block; border: 1px solid var(--color-text-dark); padding: 0.5rem 1.5rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
-        .aval-text { font-family: var(--font-editorial); font-size: 1.8rem; color: var(--color-text-dark); line-height: 1.4; max-width: 700px; margin: 0 auto; font-weight: 400; }
+        .logo-container img { 
+            max-height: 60px; 
+            width: auto; 
+            display: block; 
+        }
 
-        /* --- Carreras --- */
-        .carreras-section { padding: 9rem 2rem; max-width: 1100px; margin: 0 auto; }
-        .section-header { margin-bottom: 6rem; }
-        .section-subtitle { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 5px; color: var(--color-text-muted); margin-bottom: 1rem; }
-        .section-title { font-family: var(--font-editorial); font-size: 2.8rem; font-weight: 400; }
+        .nav-menu { 
+            list-style: none; 
+            display: flex; 
+            gap: 2rem; 
+        }
         
-        .grid-carreras { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem 5rem; text-align: left; }
-        .carrera-card { border-bottom: 1px solid #eaeaea; padding-bottom: 2.5rem; transition: all 0.4s ease; }
-        .carrera-card:hover { border-bottom-color: var(--color-accent); transform: translateY(-2px); }
-        .carrera-number { font-family: var(--font-editorial); font-size: 1.1rem; font-style: italic; color: var(--color-accent); margin-bottom: 0.8rem; }
-        .carrera-name { font-family: var(--font-editorial); font-size: 2rem; font-weight: 400; margin-bottom: 0.8rem; letter-spacing: -0.5px; }
-        .carrera-details { font-size: 0.85rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 1.5px; }
+        .nav-menu a { 
+            text-decoration: none; 
+            color: var(--color-text-dark); 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: color 0.2s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu a:hover, .nav-menu .active { 
+            color: var(--color-accent); 
+        }
 
-        /* --- Footer --- */
-        footer { border-top: 1px solid #f0f0f0; padding: 5rem 2rem; background-color: var(--color-bg); }
-        .footer-logo { max-width: 160px; margin: 0 auto 2rem auto; display: block; }
-        .footer-text { font-size: 0.8rem; color: var(--color-text-muted); letter-spacing: 1px; line-height: 1.8; }
+        /* Línea estética inferior en hover */
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+        .nav-menu a:hover::after, .nav-menu .active::after {
+            width: 100%;
+        }
+
+        /* --- Sección Contenedor Principal (Limpio) --- */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Banner Destacado --- */
+        .banner-section { 
+            width: 100%; 
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .banner-img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            object-fit: cover;
+        }
+
+        /* --- Hero Section --- */
+        .hero { 
+            padding: 5rem 0; 
+            text-align: center;
+        }
+        .hero-content { 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        .hero-tag { 
+            font-family: var(--font-alt);
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--color-accent); 
+            background-color: var(--color-accent-light);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block; 
+            margin-bottom: 1.5rem; 
+        }
+        .hero-title { 
+            font-size: 3rem; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--color-text-dark);
+            margin-bottom: 1.5rem; 
+            letter-spacing: -0.5px;
+        }
+        .hero-title span { 
+            color: var(--color-accent); 
+        }
+        .hero-description { 
+            font-size: 1.1rem; 
+            color: var(--color-text-muted); 
+            max-width: 650px; 
+            margin: 0 auto 2.5rem auto; 
+            font-weight: 400; 
+        }
+        
+        .cta-button { 
+            display: inline-block; 
+            background-color: var(--color-text-dark); 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 1rem 2.5rem; 
+            font-size: 0.85rem; 
+            font-family: var(--font-alt);
+            font-weight: 700;
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            border-radius: 6px;
+            border: 2px solid var(--color-text-dark); 
+            transition: all 0.3s ease; 
+        }
+        .cta-button:hover { 
+            background-color: transparent; 
+            color: var(--color-text-dark); 
+        }
+
+        /* --- Info / Aval Mineduc --- */
+        .aval-section { 
+            margin: 2rem 0;
+            padding: 2.5rem; 
+            background-color: var(--color-accent-light); 
+            border-radius: 12px;
+            text-align: center;
+            border: 1px dashed var(--color-accent);
+        }
+        .aval-badge { 
+            font-family: var(--font-alt);
+            display: inline-block; 
+            background-color: var(--color-accent);
+            color: white;
+            padding: 0.3rem 1rem; 
+            font-size: 0.7rem; 
+            font-weight: 700;
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            margin-bottom: 1rem; 
+            border-radius: 4px;
+        }
+        .aval-text { 
+            font-size: 1.3rem; 
+            color: var(--color-text-dark); 
+            line-height: 1.5; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            font-weight: 600; 
+        }
+
+        /* --- Carreras / Grid Estilo Catálogo --- */
+        .carreras-section { 
+            padding: 6rem 0; 
+        }
+        .section-header { 
+            text-align: center;
+            margin-bottom: 4rem; 
+        }
+        .section-subtitle { 
+            font-family: var(--font-alt);
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--color-text-muted); 
+            margin-bottom: 0.5rem; 
+            display: block;
+            font-weight: 600;
+        }
+        .section-title { 
+            font-size: 2.4rem; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+        }
+        
+        .grid-carreras { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 2rem; 
+        }
+        .carrera-card { 
+            background-color: #ffffff;
+            border: 1px solid var(--color-border); 
+            border-radius: 12px; /* Cambiado a 12px para suavizar las esquinas con foto */
+            overflow: hidden; /* Importante para que la foto no se salga de los bordes redondeados */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .carrera-card:hover { 
+            border-color: var(--color-accent); 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(225, 29, 72, 0.06);
+        }
+
+        /* Contenedor para envolver la foto de la carrera */
+        .carrera-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #f3f4f6;
+            position: relative;
+        }
+        .carrera-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .carrera-card:hover .carrera-img-wrapper img {
+            transform: scale(1.05); /* Zoom sutil premium al pasar el mouse */
+        }
+
+        /* Ajuste para colocar el número flotando sutilmente sobre la foto */
+        .carrera-number { 
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-family: var(--font-alt);
+            font-size: 0.75rem; 
+            font-weight: 700;
+            color: var(--color-accent); 
+            background: #ffffff;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            z-index: 2;
+        }
+
+        /* Contenedor de textos dentro de la tarjeta */
+        .carrera-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: left;
+        }
+        .carrera-name { 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem; 
+            line-height: 1.3;
+        }
+        .carrera-details { 
+            font-size: 0.8rem; 
+            color: var(--color-text-muted); 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            font-weight: 600;
+            border-top: 1px solid var(--color-border);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+
+        /* --- Footer Moderno --- */
+        footer { 
+            border-top: 1px solid var(--color-border); 
+            padding: 4rem 2rem; 
+            background-color: #f9fafb; 
+            text-align: center;
+        }
+        .footer-logo { 
+            max-width: 140px; 
+            margin: 0 auto 1.5rem auto; 
+            display: block; 
+        }
+        .footer-text { 
+            font-size: 0.85rem; 
+            color: var(--color-text-muted); 
+            line-height: 1.6; 
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .grid-carreras { grid-template-columns: repeat(2, 1fr); }
+        }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .grid-carreras { grid-template-columns: 1fr; gap: 3rem; }
-            .section-title { font-size: 2rem; }
-            .aval-text { font-size: 1.4rem; }
-            .logo-container img { max-width: 220px; }
+            .header-container { flex-direction: column; gap: 1rem; padding: 1rem; }
             .nav-menu { gap: 1.5rem; }
+            .hero-title { font-size: 2.2rem; }
+            .grid-carreras { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.8rem; }
+            .aval-text { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Cintillo informativo superior al estilo Beauty Depot -->
+    <div class="top-bar">
+        Inscripciones abiertas ciclo 2026 — Cupos limitados
+    </div>
+
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Extrema Belleza Logo">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo2.png" alt="Extrema Belleza Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="actividades.html">Actividades</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="banner-section">
-        <img src="baner.jpg" alt="Banner Extrema Belleza" class="banner-img">
-    </section>
+    <main class="main-container">
+        <section class="banner-section">
+            <img src="baner.jpg" alt="Banner Extrema Belleza" class="banner-img">
+        </section>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">Alta Escuela de Estilismo</span>
-            <h1 class="hero-title">Desarrolla nuevas habilidades y destaca en el mercado de la <span>belleza profesional</span></h1>
-            <p class="hero-description">
-                Prepárate con técnicas de vanguardia y destaca en un mercado global cada vez más competitivo. Tu futuro comienza aquí.
-            </p>
-            <a href="contacto.html" class="cta-button">Inscríbete Ahora</a>
-        </div>
-    </section>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-tag">Alta Escuela de Estilismo</span>
+                <h1 class="hero-title">Desarrolla nuevas habilidades y destaca en el mercado de la <span>belleza profesional</span></h1>
+                <p class="hero-description">
+                    Prepárate con técnicas de vanguardia y destaca en un mercado global cada vez más competitivo. Tu futuro comienza aquí.
+                </p>
+                <a href="contacto.html" class="cta-button">Inscríbete Ahora</a>
+            </div>
+        </section>
 
-    <section class="aval-section">
-        <div class="aval-container">
+       
+
+        <section class="carreras-section">
+            <div class="section-header">
+                <span class="section-subtitle">Nuestra Oferta Académica</span>
+                <h2 class="section-title">Carreras de Especialización</h2>
+            </div>
+
+            <div class="grid-carreras">
+                <!-- Tarjeta 1: Cultura de Belleza -->
+                <div class="carrera-card">
+                    <div class="carrera-img-wrapper">
+                        <div class="carrera-number">01</div>
+                        <img src="carreras/cybelleza.png" alt="Cultura de Belleza">
+                    </div>
+                    <div class="carrera-info">
+                        <h3 class="carrera-name">Cultura de Belleza</h3>
+                        <p class="carrera-details">Duración Especializada</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Maquillaje y Alto Peinado -->
+                <div class="carrera-card">
+                    <div class="carrera-img-wrapper">
+                        <div class="carrera-number">02</div>
+                        <img src="carreras/makeup.png" alt="Maquillaje y Alto Peinado">
+                    </div>
+                    <div class="carrera-info">
+                        <h3 class="carrera-name">Maquillaje y Alto Peinado</h3>
+                        <p class="carrera-details">Técnicas de Pasarela</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Manicurista Profesional -->
+                <div class="carrera-card">
+                    <div class="carrera-img-wrapper">
+                        <div class="carrera-number">03</div>
+                        <img src="carreras/manicurista.png" alt="Manicurista Profesional">
+                    </div>
+                    <div class="carrera-info">
+                        <h3 class="carrera-name">Manicurista Profesional</h3>
+                        <p class="carrera-details">Estética de Uñas Avanzada</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: Barbería Profesional -->
+                <div class="carrera-card">
+                    <div class="carrera-img-wrapper">
+                        <div class="carrera-number">04</div>
+                        <img src="carreras/barbero.png" alt="Barbería Profesional">
+                    </div>
+                    <div class="carrera-info">
+                        <h3 class="carrera-name">Barbería Profesional</h3>
+                        <p class="carrera-details">Cortes Clásicos y Vanguardia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+     <section class="aval-section">
             <div class="aval-badge">Certificación Oficial</div>
             <h2 class="aval-text">
-                "Te ofrecemos carreras especializadas todas avaladas por el Ministerio de Educación (Mineduc)."
+                Te ofrecemos carreras especializadas todas avaladas por el Ministerio de Educación (Mineduc).
             </h2>
-        </div>
-    </section>
-
-    <section class="carreras-section">
-        <div class="section-header">
-            <span class="section-subtitle">Nuestra Oferta Académica</span>
-            <h2 class="section-title">Carreras de Especialización</h2>
-        </div>
-
-        <div class="grid-carreras">
-            <div class="carrera-card">
-                <div class="carrera-number">01</div>
-                <h3 class="carrera-name">Cultura de Belleza</h3>
-                <p class="carrera-details">Duración Especializada</p>
-            </div>
-            <div class="carrera-card">
-                <div class="carrera-number">02</div>
-                <h3 class="carrera-name">Maquillaje y Alto Peinado</h3>
-                <p class="carrera-details">Técnicas de Pasarela</p>
-            </div>
-            <div class="carrera-card">
-                <div class="carrera-number">03</div>
-                <h3 class="carrera-name">Manicurista Profesional</h3>
-                <p class="carrera-details">Estética de Uñas Avanzada</p>
-            </div>
-            <div class="carrera-card">
-                <div class="carrera-number">04</div>
-                <h3 class="carrera-name">Barbería Profesional</h3>
-                <p class="carrera-details">Cortes Clásicos y Vanguardia</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <footer>
-        <img src="logo.png" alt="Extrema Belleza Logo" class="footer-logo">
+        <img src="logo2.png" alt="Extrema Belleza Logo" class="footer-logo">
         <p class="footer-text">© 2026 Extrema Belleza. Todos los derechos reservados.</p>
-        <p class="footer-text" style="font-size: 0.7rem; color: #999; margin-top: 0.5rem;">Formación Profesional Avalada por el Ministerio de Educación (Mineduc)</p>
+        <p class="footer-text" style="font-size: 0.75rem; margin-top: 0.5rem; font-weight: 500;">Formación Profesional Avalada por el Ministerio de Educación (Mineduc)</p>
     </footer>
 
 </body>
