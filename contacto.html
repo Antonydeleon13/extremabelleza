@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Extrema Belleza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text-dark: #111111;
+            --color-text-muted: #555555;
+            --color-accent: #f3a3b4; 
+            --font-editorial: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--color-bg); 
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+            background-size: 10px 10px;
+            color: var(--color-text-dark); 
+            font-family: var(--font-sans); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+            text-align: center; 
+        }
+
+        /* --- Header / Logo Centrado --- */
+        header { padding: 3rem 1rem; background-color: var(--color-bg); }
+        .logo-container img { max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto; }
+
+        .nav-menu { list-style: none; display: flex; justify-content: center; gap: 2.5rem; margin-top: 2rem; }
+        .nav-menu a { text-decoration: none; color: var(--color-text-dark); font-weight: 400; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s ease; }
+        .nav-menu a:hover, .nav-menu .active { color: var(--color-accent); }
+
+        /* --- Sección Mantenimiento --- */
+        .contacto-mantenimiento {
+            padding: 8rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .mantenimiento-badge {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-text-dark);
+            padding: 0.4rem 1.2rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+        }
+        .mantenimiento-title {
+            font-family: var(--font-editorial);
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-dark);
+        }
+        .mantenimiento-title span {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+        .mantenimiento-desc {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            max-width: 550px;
+            margin: 0 auto 3rem auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        .contacto-alternativo {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text-dark);
+            font-weight: 600;
+        }
+        .contacto-link {
+            color: var(--color-text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-text-dark);
+            transition: color 0.3s, border-color 0.3s;
+        }
+        .contacto-link:hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        /* --- Footer --- */
+        footer { border-top: 1px solid #f0f0f0; padding: 5rem 2rem; background-color: var(--color-bg); }
+        .footer-logo { max-width: 160px; margin: 0 auto 2rem auto; display: block; }
+        .footer-text { font-size: 0.8rem; color: var(--color-text-muted); letter-spacing: 1px; line-height: 1.8; }
+
+        @media (max-width: 768px) {
+            .mantenimiento-title { font-size: 2.2rem; }
+            .logo-container img { max-width: 220px; }
+            .nav-menu { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Extrema Belleza Logo">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="actividades.html">Actividades</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto-mantenimiento">
+            <span class="mantenimiento-badge">Aviso Oficial</span>
+            <h2 class="mantenimiento-title">Sección en <span>Mantenimiento</span></h2>
+            <p class="mantenimiento-desc">
+                Estamos optimizando nuestra plataforma de inscripciones para brindarte una experiencia más rápida y segura. Muy pronto nuestro portal de contacto estará completamente activo.
+            </p>
+            <p class="contacto-alternativo">
+                ¿Tienes alguna duda urgente? Escríbenos a: <a href="mailto:cotidaniela502@gmail.com" class="contacto-link">cotidaniela502@gmail.com</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <img src="logo.png" alt="Extrema Belleza Logo" class="footer-logo">
+        <p class="footer-text">© 2026 Extrema Belleza. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
