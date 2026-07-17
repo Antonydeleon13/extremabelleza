@@ -184,12 +184,13 @@
 
         /* --- Info / Aval Mineduc --- */
         .aval-section { 
-            margin: 2rem 0;
+            margin: 2rem auto;
             padding: 2.5rem; 
             background-color: var(--color-accent-light); 
             border-radius: 12px;
             text-align: center;
             border: 1px dashed var(--color-accent);
+            max-width: 1200px;
         }
         .aval-badge { 
             font-family: var(--font-alt);
@@ -340,18 +341,48 @@
             line-height: 1.6; 
         }
 
-        /* --- Responsive --- */
+        /* --- Responsive Optimizado Completo --- */
         @media (max-width: 1024px) {
             .grid-carreras { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 1rem; padding: 1rem; }
-            .nav-menu { gap: 1.5rem; }
-            .hero-title { font-size: 2.2rem; }
-            .grid-carreras { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.8rem; }
-            .aval-text { font-size: 1.1rem; }
+            .header-container { flex-direction: column; gap: 1.2rem; padding: 1.2rem 1rem; }
+            .nav-menu { gap: 1.5rem; justify-content: center; width: 100%; }
+            .nav-menu a { font-size: 0.8rem; padding: 0.3rem 0; }
+            
+            .main-container { padding: 0 1rem; }
+            .banner-section { margin-top: 1rem; border-radius: 8px; }
+            
+            .hero { padding: 3.5rem 0; }
+            .hero-tag { margin-bottom: 1.2rem; padding: 0.3rem 1rem; }
+            .hero-title { font-size: 1.9rem; line-height: 1.3; }
+            .hero-description { font-size: 0.95rem; margin-bottom: 2rem; }
+            .cta-button { width: 100%; text-align: center; padding: 1rem 1.5rem; }
+            
+            /* Grid en 2 columnas en móvil para máxima elegancia estética de catálogo */
+            .carreras-section { padding: 3.5rem 0; }
+            .section-header { margin-bottom: 2.5rem; }
+            .section-title { font-size: 1.6rem; }
+            .grid-carreras { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            
+            .carrera-card { border-radius: 8px; }
+            .carrera-img-wrapper { height: 135px; }
+            .carrera-info { padding: 1rem; }
+            .carrera-name { font-size: 0.95rem; margin-bottom: 0.6rem; }
+            .carrera-details { padding-top: 0.6rem; font-size: 0.7rem; }
+            .carrera-number { width: 24px; height: 24px; font-size: 0.65rem; top: 0.6rem; left: 0.6rem; }
+
+            .aval-section { margin: 1.5rem 1rem; padding: 1.8rem 1.2rem; border-radius: 8px; }
+            .aval-text { font-size: 1.05rem; }
+            
+            footer { padding: 3rem 1rem; }
+        }
+        
+        /* Ajuste fino para pantallas extremadamente pequeñas */
+        @media (max-width: 380px) {
+            .grid-carreras { grid-template-columns: 1fr; gap: 1.5rem; }
+            .carrera-img-wrapper { height: 180px; }
         }
     </style>
 </head>
@@ -392,8 +423,6 @@
                 <a href="contacto.html" class="cta-button">Inscríbete Ahora</a>
             </div>
         </section>
-
-       
 
         <section class="carreras-section">
             <div class="section-header">
@@ -453,13 +482,12 @@
         </section>
     </main>
 
-
-     <section class="aval-section">
-            <div class="aval-badge">Certificación Oficial</div>
-            <h2 class="aval-text">
-                Te ofrecemos carreras especializadas todas avaladas por el Ministerio de Educación (Mineduc).
-            </h2>
-        </section>
+    <section class="aval-section">
+        <div class="aval-badge">Certificación Oficial</div>
+        <h2 class="aval-text">
+            Te ofrecemos carreras especializadas todas avaladas por el Ministerio de Educación (Mineduc).
+        </h2>
+    </section>
 
     <footer>
         <img src="logo2.png" alt="Extrema Belleza Logo" class="footer-logo">
